@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				blog: {
+					accent: '#9b87f5',
+					highlight: '#7E69AB',
+					muted: '#E5DEFF',
+					background: '#F9FAFC',
 				}
 			},
 			borderRadius: {
@@ -84,13 +91,97 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'chat-open': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px) scale(0.95)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0) scale(1)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.4s ease-out',
+				'slide-in': 'slide-in 0.4s ease-out',
+				'chat-open': 'chat-open 0.3s ease-out',
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '100%',
+						color: 'var(--tw-prose-body)',
+						'[class~="lead"]': {
+							color: 'var(--tw-prose-lead)',
+						},
+						a: {
+							color: '#7E69AB',
+							textDecoration: 'underline',
+							fontWeight: '500',
+						},
+						strong: {
+							color: 'var(--tw-prose-bold)',
+							fontWeight: '600',
+						},
+						h1: {
+							color: 'var(--tw-prose-headings)',
+							fontWeight: '800',
+							fontSize: '2.25em',
+							marginTop: '0',
+							marginBottom: '0.8888889em',
+							lineHeight: '1.1111111',
+						},
+						h2: {
+							color: 'var(--tw-prose-headings)',
+							fontWeight: '700',
+							fontSize: '1.5em',
+							marginTop: '2em',
+							marginBottom: '1em',
+							lineHeight: '1.3333333',
+						},
+						h3: {
+							color: 'var(--tw-prose-headings)',
+							fontWeight: '600',
+							fontSize: '1.25em',
+							marginTop: '1.6em',
+							marginBottom: '0.6em',
+							lineHeight: '1.6',
+						},
+						h4: {
+							color: 'var(--tw-prose-headings)',
+							fontWeight: '600',
+							marginTop: '1.5em',
+							marginBottom: '0.5em',
+							lineHeight: '1.5',
+						},
+					}
+				}
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
 } satisfies Config;
