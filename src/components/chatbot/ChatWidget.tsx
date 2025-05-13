@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,7 +14,7 @@ interface Message {
 const INITIAL_MESSAGES: Message[] = [
   {
     id: '1',
-    content: "Hi there! I'm your BlogChat assistant. How can I help you today?",
+    content: "Hi there! I'm your Tunisie Hub assistant. How can I help you today?",
     isBot: true,
     timestamp: new Date()
   }
@@ -133,7 +132,7 @@ const ChatWidget: React.FC = () => {
         <div className="fixed bottom-24 right-6 z-50 w-80 md:w-96 h-[450px] bg-background border border-border rounded-lg shadow-lg flex flex-col animate-chat-open">
           {/* Header */}
           <div className="p-3 border-b border-border flex items-center justify-between bg-blue-500 text-primary-foreground rounded-t-lg">
-            <h3 className="font-medium">BlogChat Assistant</h3>
+            <h3 className="font-medium">Tunisie Hub Assistant</h3>
             <Button 
               variant="ghost" 
               size="icon" 

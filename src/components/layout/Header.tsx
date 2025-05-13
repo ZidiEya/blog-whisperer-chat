@@ -20,7 +20,7 @@ const Header: React.FC = () => {
     <header className="py-4 border-b border-border sticky top-0 bg-background/80 backdrop-blur-sm z-40">
       <div className="container flex items-center justify-between">
         <Link to="/" className="text-xl font-bold text-foreground">
-          BlogChat
+          Tunisie Hub
         </Link>
         
         {/* Desktop Navigation */}
