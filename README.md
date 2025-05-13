@@ -1,73 +1,89 @@
-# Welcome to your Lovable project
 
-## Project info
+# 🇹🇳 Tunisie Hub
 
-**URL**: https://lovable.dev/projects/0123675c-9e0d-4c82-b700-48d5372b011e
+**Tunisie Hub** is a digital platform that serves as a cultural and technological space for Tunisians and friends of Tunisia. It is a blog-based website enhanced with a smart **chatbot** that helps users explore Tunisian innovation, artisanship, tech insights, and economic thought — all in one place.
 
-## How can I edit this code?
+## 🧠 Project Description
 
-There are several ways of editing your application.
+Tunisie Hub is more than a blog. It’s a living, growing ecosystem aiming to:
+- Promote Tunisian culture, startups, and digital creativity
+- Share resources on entrepreneurship, design, technology, and economy
+- Provide interactive assistance via a chatbot for user support and content discovery
 
-**Use Lovable**
+Built with a clean, modern design and automation-ready backend, this platform can be extended with advanced features like AI recommendations, comment sections, and community integration.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0123675c-9e0d-4c82-b700-48d5372b011e) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 💡 Features
 
-**Use your preferred IDE**
+- 📝 Blog system with categorized posts (tech, economy, art, culture)
+- 🤖 AI-powered chatbot for navigation, answers, and support
+- 🔍 Search and filter capabilities
+- 🌐 Multilingual support (planned)
+- 🔒 Secure and user-friendly authentication system (planned)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ⚙️ Technologies Used
 
-Follow these steps:
+- **Frontend**: HTML5, CSS3, JavaScript (React or Vanilla depending on version)
+- **Backend**: Node.js / Express.js or Python / Flask (choose based on your stack)
+- **Database**: MongoDB / PostgreSQL
+- **Chatbot**: OpenAI API integration or rule-based fallback
+- **Deployment**: Vercel / Netlify / Heroku / Render
+- **Version Control**: Git & GitHub
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🏁 Getting Started
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. **Clone the repository**
+```bash
+git clone https://github.com/your-username/tunisie-hub.git
+cd tunisie-hub
+Install dependencies
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+bash
+Copier
+Modifier
+npm install
+# or
+pip install -r requirements.txt
+Start the development server
 
-**Edit a file directly in GitHub**
+bash
+Copier
+Modifier
+npm start
+# or
+flask run
+📁 Project Structure
+bash
+Copier
+Modifier
+tunisie-hub/
+│
+├── public/             # Static files
+├── src/                # Main source code
+│   ├── components/     # Reusable UI components
+│   ├── pages/          # Blog and chatbot views
+│   ├── chatbot/        # Chatbot logic or integration
+│   └── App.js
+│
+├── backend/            # Optional backend code
+├── README.md
+├── package.json
+└── .env                # API keys and environment variables
+🤝 Contributors
+Eya Zidi — Founder, designer & main developer
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Open to collaborators: designers, writers, developers
 
-**Use GitHub Codespaces**
+📬 Contact
+If you’re interested in contributing or partnering, reach out via:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Email: 3805@holbertonstudents.com
 
-## What technologies are used for this project?
+Instagram: @tunisie.hub
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0123675c-9e0d-4c82-b700-48d5372b011e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Website (coming soon): https://www.tunisiehub.tn
