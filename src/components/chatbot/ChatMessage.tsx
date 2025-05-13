@@ -29,7 +29,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
         "rounded-lg px-3 py-2 max-w-[80%] text-sm",
         message.isBot ? 
           "bg-muted text-foreground" : 
-          "bg-blog-accent text-primary-foreground ml-auto"
+          "bg-blue-500 text-primary-foreground ml-auto"
       )}>
         {message.content}
       </div>

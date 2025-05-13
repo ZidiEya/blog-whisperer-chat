@@ -117,7 +117,7 @@ const Contact = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-blog-accent hover:bg-blog-highlight"
+                  className="w-full bg-blue-500 hover:bg-blue-600"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -128,7 +128,7 @@ const Contact = () => {
           
           {/* Contact info */}
           <section>
-            <div className="bg-blog-muted rounded-lg p-6 md:p-8 mb-8">
+            <div className="bg-blue-50 rounded-lg p-6 md:p-8 mb-8">
               <h2 className="text-xl font-bold mb-4">Connect with us</h2>
               <p className="mb-6">
                 We aim to respond to all inquiries within 48 hours during business days.
@@ -145,9 +145,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-medium mb-1">Social Media</h3>
                   <div className="flex space-x-4 mt-2">
-                    <a href="#" className="hover:text-blog-accent">Twitter</a>
-                    <a href="#" className="hover:text-blog-accent">LinkedIn</a>
-                    <a href="#" className="hover:text-blog-accent">Instagram</a>
+                    <a href="#" className="hover:text-blue-500">Twitter</a>
+                    <a href="#" className="hover:text-blue-500">LinkedIn</a>
+                    <a href="#" className="hover:text-blue-500">Instagram</a>
                   </div>
                 </div>
               </div>

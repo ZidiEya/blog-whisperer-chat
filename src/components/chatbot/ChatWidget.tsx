@@ -117,7 +117,7 @@ const ChatWidget: React.FC = () => {
         <Button
           onClick={() => setIsOpen(!isOpen)}
           size="icon"
-          className="h-12 w-12 rounded-full shadow-lg bg-blog-accent hover:bg-blog-highlight"
+          className="h-12 w-12 rounded-full shadow-lg bg-blue-500 hover:bg-blue-600"
         >
           {isOpen ? (
             <X className="h-5 w-5" />
@@ -132,13 +132,13 @@ const ChatWidget: React.FC = () => {
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50 w-80 md:w-96 h-[450px] bg-background border border-border rounded-lg shadow-lg flex flex-col animate-chat-open">
           {/* Header */}
-          <div className="p-3 border-b border-border flex items-center justify-between bg-blog-accent text-primary-foreground rounded-t-lg">
+          <div className="p-3 border-b border-border flex items-center justify-between bg-blue-500 text-primary-foreground rounded-t-lg">
             <h3 className="font-medium">BlogChat Assistant</h3>
             <Button 
               variant="ghost" 
               size="icon" 
               onClick={() => setIsOpen(false)}
-              className="h-8 w-8 text-primary-foreground hover:text-primary-foreground/80 hover:bg-blog-highlight"
+              className="h-8 w-8 text-primary-foreground hover:text-primary-foreground/80 hover:bg-blue-600"
             >
               <X className="h-4 w-4" />
               <span className="sr-only">Close</span>
@@ -166,7 +166,7 @@ const ChatWidget: React.FC = () => {
                 type="submit" 
                 size="icon" 
                 disabled={!input.trim()}
-                className="bg-blog-accent hover:bg-blog-highlight"
+                className="bg-blue-500 hover:bg-blue-600"
               >
                 <Send className="h-4 w-4" />
                 <span className="sr-only">Send</span>

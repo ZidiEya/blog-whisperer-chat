@@ -64,9 +64,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				blog: {
-					accent: '#9b87f5',
-					highlight: '#7E69AB',
-					muted: '#E5DEFF',
+					accent: '#0EA5E9',
+					highlight: '#0C8FC7',
+					muted: '#E8F7FC',
 					background: '#F9FAFC',
 				}
 			},
