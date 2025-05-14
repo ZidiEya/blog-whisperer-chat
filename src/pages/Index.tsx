@@ -67,6 +67,26 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Services CTA */}
+      <section className="py-12 bg-white border-y">
+        <div className="blog-container">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold mb-4">Premium Services for Tunisia Enthusiasts</h2>
+            <p className="text-muted-foreground mb-6">
+              Unlock expert consulting services and premium content with our membership plans. Elevate your Tunisian business and cultural experience.
+            </p>
+            <div className="flex justify-center gap-4">
+              <Button asChild className="bg-blog-accent hover:bg-blog-highlight">
+                <Link to="/payments">
+                  View Services
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Newsletter */}
       <section className="py-12 md:py-16">
         <div className="blog-container">

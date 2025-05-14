@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -110,8 +109,10 @@ const About = () => {
               </div>
               
               <div className="text-center">
-                <Button className="bg-blog-accent hover:bg-blog-highlight">
-                  Schedule a Consultation
+                <Button className="bg-blog-accent hover:bg-blog-highlight" asChild>
+                  <Link to="/payments?tab=consultation">
+                    Schedule a Consultation
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -189,7 +190,9 @@ const About = () => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-blog-accent hover:bg-blog-highlight">Subscribe Now</Button>
+                <Button className="w-full bg-blog-accent hover:bg-blog-highlight" asChild>
+                  <Link to="/payments?tab=membership">Subscribe Now</Link>
+                </Button>
               </CardFooter>
             </Card>
             
@@ -227,9 +230,17 @@ const About = () => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button variant="outline" className="w-full">Contact Sales</Button>
+                <Button variant="outline" className="w-full" asChild>
+                  <Link to="/payments?tab=membership">Contact Sales</Link>
+                </Button>
               </CardFooter>
             </Card>
+          </div>
+          
+          <div className="text-center mt-8">
+            <Button size="lg" className="bg-blog-accent hover:bg-blog-highlight" asChild>
+              <Link to="/payments">View All Plans & Services</Link>
+            </Button>
           </div>
         </section>
         
