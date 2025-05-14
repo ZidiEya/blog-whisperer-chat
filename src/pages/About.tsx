@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Check, Users } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const About = () => {
   return (
@@ -42,6 +44,192 @@ const About = () => {
                 and find exactly what they're looking for with minimal effort.
               </p>
             </div>
+          </div>
+        </section>
+        
+        {/* Consulting Services section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-8 text-center">Consulting Services</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
+              <h3 className="text-xl font-bold mb-4 text-blog-accent">Expert Guidance for Your Tunisian Ventures</h3>
+              <p className="mb-6">
+                Leverage our deep understanding of Tunisian business landscape, culture, and market dynamics. 
+                Our team of experts provides tailored consulting services to help businesses, entrepreneurs, 
+                and individuals navigate opportunities in Tunisia.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="flex items-start">
+                  <div className="bg-blog-muted p-2 rounded-full mr-4">
+                    <Check className="h-5 w-5 text-blog-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Market Entry Strategy</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Custom strategies for international companies entering the Tunisian market.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="bg-blog-muted p-2 rounded-full mr-4">
+                    <Check className="h-5 w-5 text-blog-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Cultural Integration</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Training and insights on Tunisian business etiquette and cultural nuances.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="bg-blog-muted p-2 rounded-full mr-4">
+                    <Check className="h-5 w-5 text-blog-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Local Partnership Facilitation</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Connect with vetted Tunisian businesses and potential partners.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="bg-blog-muted p-2 rounded-full mr-4">
+                    <Check className="h-5 w-5 text-blog-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Regulatory Navigation</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Guidance on navigating Tunisian business regulations and compliance requirements.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <Button className="bg-blog-accent hover:bg-blog-highlight">
+                  Schedule a Consultation
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Membership section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-8 text-center">Membership Plans</h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
+            Join our community and get exclusive access to premium content, resources, and benefits tailored to your interests in Tunisian culture and business.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Basic Plan */}
+            <Card className="relative overflow-hidden">
+              <CardHeader>
+                <CardTitle>Basic</CardTitle>
+                <CardDescription>Free access to standard content</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-4xl font-bold mb-6">
+                  Free
+                </div>
+                <ul className="space-y-2 mb-8">
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Access to all public articles</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">AI chatbot assistance</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Receive monthly newsletter</span>
+                  </li>
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline" className="w-full">Get Started</Button>
+              </CardFooter>
+            </Card>
+            
+            {/* Premium Plan */}
+            <Card className="relative overflow-hidden border-blog-accent shadow-lg">
+              <div className="absolute top-0 left-0 w-full bg-blog-accent text-white text-center py-1 text-xs font-bold">
+                MOST POPULAR
+              </div>
+              <CardHeader className="pt-8">
+                <CardTitle>Premium</CardTitle>
+                <CardDescription>Enhanced access and benefits</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-4xl font-bold mb-6">
+                  $9.99<span className="text-base font-normal">/month</span>
+                </div>
+                <ul className="space-y-2 mb-8">
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Everything in Basic</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Exclusive premium articles</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Monthly virtual events</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Digital resources & guides</span>
+                  </li>
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button className="w-full bg-blog-accent hover:bg-blog-highlight">Subscribe Now</Button>
+              </CardFooter>
+            </Card>
+            
+            {/* Business Plan */}
+            <Card className="relative overflow-hidden">
+              <CardHeader>
+                <CardTitle>Business</CardTitle>
+                <CardDescription>For organizations and teams</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-4xl font-bold mb-6">
+                  $29.99<span className="text-base font-normal">/month</span>
+                </div>
+                <ul className="space-y-2 mb-8">
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Everything in Premium</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Up to 5 team members</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Quarterly consultation calls</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Customized market reports</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blog-accent mr-2" />
+                    <span className="text-sm">Priority support</span>
+                  </li>
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline" className="w-full">Contact Sales</Button>
+              </CardFooter>
+            </Card>
           </div>
         </section>
         
