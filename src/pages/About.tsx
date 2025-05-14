@@ -14,7 +14,7 @@ const About = () => {
           <div className="mx-auto w-48 h-48 mb-6">
             <AspectRatio ratio={1/1} className="bg-white rounded-full overflow-hidden">
               <img 
-                src="/lovable-uploads/f82801db-9cf8-4d74-9d3a-d8551fd0d4b3.png" 
+                src="/lovable-uploads/e3651d87-8ded-4f52-bc0a-ea44f577a923.png" 
                 alt="Tunisie Valley Hub Logo" 
                 className="object-cover w-full h-full"
               />
