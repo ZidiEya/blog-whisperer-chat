@@ -2,16 +2,27 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const About = () => {
   return (
     <main className="py-12">
       <div className="blog-container">
-        {/* Hero section */}
+        {/* Hero section with logo */}
         <section className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">About BlogChat</h1>
+          <div className="mx-auto w-48 h-48 mb-6">
+            <AspectRatio ratio={1/1} className="bg-white rounded-full overflow-hidden">
+              <img 
+                src="/lovable-uploads/f82801db-9cf8-4d74-9d3a-d8551fd0d4b3.png" 
+                alt="Tunisie Valley Hub Logo" 
+                className="object-cover w-full h-full"
+              />
+            </AspectRatio>
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">About Tunisie Hub</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A modern blog platform with an integrated AI chatbot to help users discover relevant content and get answers to their questions.
+            A modern platform connecting Tunisia's digital future with its cultural roots, empowering local creators, entrepreneurs, and artisans.
           </p>
         </section>
         
@@ -79,7 +90,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">Our Story</h2>
             <p className="mb-4">
-              BlogChat started in 2024 as a small project between friends who were passionate about 
+              Tunisie Hub started as a small project between friends who were passionate about 
               technology, design, and making information more accessible. We noticed that while there 
               were many excellent blogs available, finding specific information often required 
               significant effort from readers.
@@ -90,7 +101,7 @@ const About = () => {
               As our audience grew, we expanded our topics to include business, lifestyle, and more.
             </p>
             <p>
-              Today, BlogChat continues to evolve with our commitment to quality content and 
+              Today, Tunisie Hub continues to evolve with our commitment to quality content and 
               innovative user experiences at the core of everything we do.
             </p>
           </div>
