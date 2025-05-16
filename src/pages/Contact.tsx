@@ -59,12 +59,15 @@ const Contact = () => {
   };
 
   return (
-    <main className="py-12">
+    <main className="py-12 bg-cover bg-center min-h-screen" style={{ 
+      backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80")',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="blog-container">
         {/* Header */}
         <section className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">Contact Us</h1>
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Have questions or feedback? We'd love to hear from you.
           </p>
         </section>
@@ -72,7 +75,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact form */}
           <section>
-            <div className="bg-card rounded-lg border p-6 md:p-8">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg border shadow-lg p-6 md:p-8">
               <h2 className="text-xl font-bold mb-6">Send us a message</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -146,7 +149,7 @@ const Contact = () => {
           
           {/* Contact info */}
           <section>
-            <div className="bg-blue-50 rounded-lg p-6 md:p-8 mb-8">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 md:p-8 mb-8 shadow-lg">
               <h2 className="text-xl font-bold mb-4">Connect with us</h2>
               <p className="mb-6">
                 We aim to respond to all inquiries within 48 hours during business days.
@@ -171,7 +174,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <div>
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-lg">
               <h2 className="text-xl font-bold mb-4">Frequently Asked Questions</h2>
               <div className="space-y-4">
                 <div>
