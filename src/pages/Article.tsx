@@ -37,7 +37,7 @@ const ARTICLES = [
       <h2>Conclusion</h2>
       <p>The web platform continues to mature in exciting ways. As these trends converge, we'll see web applications that rival native experiences in performance while maintaining the web's unique advantages of accessibility and instant updates. For developers, staying adaptable and continuing to learn will be more important than ever in this rapidly evolving landscape.</p>
     `,
-    author: "Sarah Johnson",
+    author: "Eya Zidi",
     date: "2025-05-01",
     readTime: "6 min read",
     categories: ["Technology", "Web Development"],
@@ -94,7 +94,7 @@ const ARTICLES = [
       <h2>Conclusion</h2>
       <p>Accessibility shouldn't be an afterthought or a checkbox exercise—it should be integrated into your design process from the beginning. By adopting these best practices, you'll create more inclusive products that work better for everyone, not just users with disabilities.</p>
     `,
-    author: "Michael Chen",
+    author: "Eya Zidi",
     date: "2025-04-28",
     readTime: "8 min read",
     categories: ["Design", "Accessibility"],
@@ -157,7 +157,7 @@ const ARTICLES = [
       
       <p>The creative professionals who thrive will be those who learn to effectively collaborate with AI tools—using them to handle routine aspects of content creation while focusing their human efforts on strategy, emotional connection, and original thinking.</p>
     `,
-    author: "Emily Rodriguez",
+    author: "Eya Zidi",
     date: "2025-04-22",
     readTime: "5 min read",
     categories: ["AI", "Content"],
@@ -171,7 +171,7 @@ const RELATED_POSTS = [
     id: "4",
     title: "How to Build a Successful Remote Work Culture",
     excerpt: "Strategies for maintaining team cohesion, productivity, and employee satisfaction in distributed teams and remote work environments.",
-    author: "David Park",
+    author: "Eya Zidi",
     date: "2025-04-15",
     readTime: "7 min read",
     categories: ["Business", "Remote Work"],
@@ -181,7 +181,7 @@ const RELATED_POSTS = [
     id: "5",
     title: "Understanding Web3 and the Decentralized Internet",
     excerpt: "A beginner's guide to Web3 technologies, blockchain applications, and how decentralized systems are changing online interactions.",
-    author: "Priya Sharma",
+    author: "Eya Zidi",
     date: "2025-04-10",
     readTime: "9 min read",
     categories: ["Technology", "Blockchain"],
@@ -191,7 +191,7 @@ const RELATED_POSTS = [
     id: "6",
     title: "The Psychology of Color in Digital Design",
     excerpt: "How color choices affect user perception, emotions, and behavior, with practical tips for effective color schemes in your designs.",
-    author: "Alex Morgan",
+    author: "Eya Zidi",
     date: "2025-04-05",
     readTime: "6 min read",
     categories: ["Design", "Psychology"],
