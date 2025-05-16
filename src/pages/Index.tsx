@@ -8,14 +8,22 @@ import { Link } from 'react-router-dom';
 const Index = () => {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-blog-muted to-background">
-        <div className="blog-container">
+      {/* Hero Section with Tunisia background image */}
+      <section 
+        className="py-20 md:py-32 relative bg-cover bg-center"
+        style={{ 
+          backgroundImage: 'url("https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80")'
+        }}
+      >
+        {/* Overlay to ensure text is readable */}
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        
+        <div className="blog-container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Discover Insights & Ideas on Our Blog
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl mb-8 text-white">
               Explore thoughtful articles on technology, design, and more. 
               Our AI assistant is ready to help you find what you're looking for.
             </p>
@@ -26,7 +34,7 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="bg-white/20 text-white hover:bg-white/30 border-white">
                 <Link to="/about">About Us</Link>
               </Button>
             </div>
