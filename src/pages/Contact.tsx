@@ -23,21 +23,39 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      toast.success("Message sent successfully! We'll get back to you soon.");
-      setFormState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+    // Create a mailto link with form data
+    const mailtoLink = `mailto:eyzvalleycartagena@outlook.com?subject=${encodeURIComponent(
+      `Contact Form: ${formState.subject}`
+    )}&body=${encodeURIComponent(
+      `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`
+    )}`;
+    
+    try {
+      // Open the user's email client with the populated email
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      toast.success("Email client opened! Please send the email to complete your message.");
+      
+      // Reset form after a short delay to allow the user to see the success message
+      setTimeout(() => {
+        setFormState({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      }, 1000);
+    } catch (error) {
+      console.error("Error opening email client:", error);
+      toast.error("There was a problem opening your email client. Please try again or contact us directly.");
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -120,7 +138,7 @@ const Contact = () => {
                   className="w-full bg-blue-500 hover:bg-blue-600"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? 'Opening Email Client...' : 'Send Message'}
                 </Button>
               </form>
             </div>
@@ -136,7 +154,7 @@ const Contact = () => {
               <div className="space-y-4">
                 <div>
                   <h3 className="font-medium mb-1">Email</h3>
-                  <p>hello@blogchat.com</p>
+                  <p>eyzvalleycartagena@outlook.com</p>
                 </div>
                 <div>
                   <h3 className="font-medium mb-1">Address</h3>
