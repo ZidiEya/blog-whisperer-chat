@@ -12,7 +12,8 @@ const FEATURED_POSTS = [
     date: "2025-05-01",
     readTime: "6 min read",
     categories: ["Technology", "Web Development"],
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1200&q=80",
+    authorImage: "/lovable-uploads/0c847fa3-d2fe-4d6a-ad25-637be5fd48a6.png"
   },
   {
     id: "2",
@@ -22,7 +23,8 @@ const FEATURED_POSTS = [
     date: "2025-04-28",
     readTime: "8 min read",
     categories: ["Design", "Accessibility"],
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+    authorImage: "/lovable-uploads/0c847fa3-d2fe-4d6a-ad25-637be5fd48a6.png"
   },
   {
     id: "3",
@@ -32,7 +34,8 @@ const FEATURED_POSTS = [
     date: "2025-04-22",
     readTime: "5 min read",
     categories: ["AI", "Content"],
-    image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1200&q=80",
+    authorImage: "/lovable-uploads/0c847fa3-d2fe-4d6a-ad25-637be5fd48a6.png"
   }
 ];
 

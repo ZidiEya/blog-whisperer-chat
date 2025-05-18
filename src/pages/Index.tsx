@@ -4,6 +4,7 @@ import FeaturedPosts from '@/components/blog/FeaturedPosts';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Index = () => {
   return (
@@ -44,6 +45,35 @@ const Index = () => {
 
       {/* Featured Posts */}
       <FeaturedPosts />
+
+      {/* About Author Section */}
+      <section className="py-10 bg-white">
+        <div className="blog-container">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/3">
+              <Avatar className="h-36 w-36 rounded-full mx-auto">
+                <AvatarImage 
+                  src="/lovable-uploads/0c847fa3-d2fe-4d6a-ad25-637be5fd48a6.png" 
+                  alt="Eya Zidi" 
+                  className="object-cover"
+                />
+                <AvatarFallback>EZ</AvatarFallback>
+              </Avatar>
+            </div>
+            <div className="md:w-2/3 text-center md:text-left">
+              <h2 className="text-2xl font-bold mb-3">Meet Eya Zidi</h2>
+              <p className="text-muted-foreground mb-4">
+                Founder of Tunisie Hub and passionate advocate for Tunisian culture and technology. 
+                Through this platform, I share insights about innovation, design, and the vibrant 
+                cultural landscape of Tunisia.
+              </p>
+              <Button asChild variant="outline" className="border-blog-accent text-blog-accent hover:bg-blog-accent/10">
+                <Link to="/about">Learn More About Me</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Categories Section */}
       <section className="py-12 bg-muted/50">
