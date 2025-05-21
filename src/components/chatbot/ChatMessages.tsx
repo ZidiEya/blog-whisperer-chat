@@ -1,7 +1,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import ChatMessage from './ChatMessage';
+import ChatBubble from './ChatBubble';
 
 interface Message {
   id: string;
@@ -27,7 +27,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages }) => {
     <ScrollArea className="flex-1 p-3">
       <div className="space-y-2">
         {messages.map((message) => (
-          <ChatMessage 
+          <ChatBubble 
             key={message.id} 
             message={message} 
           />
