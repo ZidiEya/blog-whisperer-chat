@@ -14,6 +14,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Payments from "./pages/Payments";
+import UsersList from "./components/chatbot/UsersList";
+import { SAMPLE_USERS } from "./components/chatbot/ChatUserList";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +35,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/payments" element={<Payments />} />
+              <Route path="/users" element={<UsersList users={SAMPLE_USERS} />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

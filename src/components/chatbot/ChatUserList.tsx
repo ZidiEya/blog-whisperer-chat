@@ -11,6 +11,38 @@ export interface ChatUser {
   unreadCount?: number;
 }
 
+// Sample users for demonstration - making this exportable
+export const SAMPLE_USERS: ChatUser[] = [
+  {
+    id: 'user-1',
+    name: 'Eya Zidi',
+    avatar: '/lovable-uploads/0c847fa3-d2fe-4d6a-ad25-637be5fd48a6.png',
+    status: 'online',
+    lastMessage: 'Hello, how are you doing?',
+  },
+  {
+    id: 'user-2',
+    name: 'Sarah Chen',
+    avatar: 'https://i.pravatar.cc/150?img=32',
+    status: 'online',
+    lastMessage: 'Did you see the latest article?',
+    unreadCount: 2
+  },
+  {
+    id: 'user-3',
+    name: 'Mohamed Ali',
+    avatar: 'https://i.pravatar.cc/150?img=67',
+    status: 'away',
+    lastMessage: 'Looking forward to the meeting',
+  },
+  {
+    id: 'user-4',
+    name: 'James Wilson',
+    avatar: 'https://i.pravatar.cc/150?img=53',
+    status: 'offline',
+  }
+];
+
 interface ChatUserListProps {
   users: ChatUser[];
   selectedUserId: string | null;
