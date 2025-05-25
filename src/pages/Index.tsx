@@ -1,6 +1,6 @@
-
 import React from 'react';
 import FeaturedPosts from '@/components/blog/FeaturedPosts';
+import NewsletterSignup from '@/components/newsletter/NewsletterSignup';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -128,23 +128,7 @@ const Index = () => {
       {/* Newsletter */}
       <section className="py-12 md:py-16">
         <div className="blog-container">
-          <div className="bg-blog-accent/10 rounded-xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h2>
-            <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-              Get the latest articles and insights delivered straight to your inbox.
-            </p>
-            <form className="flex flex-col sm:flex-row max-w-md mx-auto gap-2">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                required
-              />
-              <Button type="submit" className="bg-blog-accent hover:bg-blog-highlight">
-                Subscribe
-              </Button>
-            </form>
-          </div>
+          <NewsletterSignup />
         </div>
       </section>
     </main>

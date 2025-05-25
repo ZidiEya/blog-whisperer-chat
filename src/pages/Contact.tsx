@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -27,11 +28,22 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Store the message locally
+    const messages = JSON.parse(localStorage.getItem('contact_messages') || '[]');
+    const newMessage = {
+      ...formState,
+      id: Date.now().toString(),
+      date: new Date().toISOString(),
+      status: 'unread'
+    };
+    messages.push(newMessage);
+    localStorage.setItem('contact_messages', JSON.stringify(messages));
+    
     // Create a mailto link with form data
     const mailtoLink = `mailto:eyzvalleycartagena@outlook.com?subject=${encodeURIComponent(
       `Contact Form: ${formState.subject}`
     )}&body=${encodeURIComponent(
-      `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`
+      `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}\n\n---\nSent from Tunisie Hub Contact Form`
     )}`;
     
     try {
@@ -39,9 +51,9 @@ const Contact = () => {
       window.location.href = mailtoLink;
       
       // Show success message
-      toast.success("Email client opened! Please send the email to complete your message.");
+      toast.success("Message saved and email client opened! We'll get back to you soon.");
       
-      // Reset form after a short delay to allow the user to see the success message
+      // Reset form after a short delay
       setTimeout(() => {
         setFormState({
           name: '',
@@ -52,7 +64,7 @@ const Contact = () => {
       }, 1000);
     } catch (error) {
       console.error("Error opening email client:", error);
-      toast.error("There was a problem opening your email client. Please try again or contact us directly.");
+      toast.error("Message saved but couldn't open email client. We'll still respond to your message!");
     } finally {
       setIsSubmitting(false);
     }
@@ -75,76 +87,83 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact form */}
           <section>
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg border shadow-lg p-6 md:p-8">
-              <h2 className="text-xl font-bold mb-6">Send us a message</h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">
-                    Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formState.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your name"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-1">
-                    Subject
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    value={formState.subject}
-                    onChange={handleChange}
-                    required
-                    placeholder="What is your message about?"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formState.message}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your message..."
-                    rows={5}
-                  />
-                </div>
-                
-                <Button 
-                  type="submit" 
-                  className="w-full bg-blue-500 hover:bg-blue-600"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Opening Email Client...' : 'Send Message'}
-                </Button>
-              </form>
-            </div>
+            <Card className="bg-white/90 backdrop-blur-sm border shadow-lg">
+              <CardHeader>
+                <CardTitle>Send us a message</CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Fill out the form below and we'll get back to you within 24 hours.
+                </p>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium mb-1">
+                      Name *
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formState.name}
+                      onChange={handleChange}
+                      required
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-1">
+                      Email *
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formState.email}
+                      onChange={handleChange}
+                      required
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium mb-1">
+                      Subject *
+                    </label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      value={formState.subject}
+                      onChange={handleChange}
+                      required
+                      placeholder="What is your message about?"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-1">
+                      Message *
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formState.message}
+                      onChange={handleChange}
+                      required
+                      placeholder="Tell us more about your inquiry..."
+                      rows={5}
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-blue-500 hover:bg-blue-600"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending Message...' : 'Send Message'}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </section>
           
           {/* Contact info */}

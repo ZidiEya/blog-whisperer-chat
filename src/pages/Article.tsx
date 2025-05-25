@@ -3,6 +3,9 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ArticleContent from '@/components/blog/ArticleContent';
 import PostCard from '@/components/blog/PostCard';
+import CommentsSection from '@/components/blog/CommentsSection';
+import ArticleRating from '@/components/blog/ArticleRating';
+import SocialShare from '@/components/blog/SocialShare';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
@@ -232,6 +235,21 @@ const Article = () => {
       
       {/* Article content */}
       <ArticleContent article={article} />
+      
+      {/* Social sharing */}
+      <div className="blog-container">
+        <SocialShare title={article.title} />
+      </div>
+      
+      {/* Article rating */}
+      <div className="blog-container">
+        <ArticleRating articleId={article.id} />
+      </div>
+      
+      {/* Comments section */}
+      <div className="blog-container">
+        <CommentsSection articleId={article.id} />
+      </div>
       
       {/* Related articles */}
       <section className="blog-container mt-12 pt-8 border-t border-border">
