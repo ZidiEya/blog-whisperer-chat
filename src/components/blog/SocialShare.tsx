@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Share, Mail } from 'lucide-react';
+import { Share, Mail, Copy } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface SocialShareProps {
@@ -22,13 +22,12 @@ const SocialShare: React.FC<SocialShareProps> = ({ title, url = window.location.
   };
 
   const handleShare = (platform: keyof typeof shareLinks) => {
-    if (platform === 'copy') {
-      navigator.clipboard.writeText(url);
-      toast.success('Link copied to clipboard!');
-      return;
-    }
-
     window.open(shareLinks[platform], '_blank', 'width=600,height=400');
+  };
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(url);
+    toast.success('Link copied to clipboard!');
   };
 
   const handleNativeShare = async () => {
@@ -42,7 +41,7 @@ const SocialShare: React.FC<SocialShareProps> = ({ title, url = window.location.
         console.log('Error sharing:', error);
       }
     } else {
-      handleShare('copy');
+      handleCopyLink();
     }
   };
 
@@ -91,6 +90,16 @@ const SocialShare: React.FC<SocialShareProps> = ({ title, url = window.location.
             >
               <Mail className="h-4 w-4 mr-1" />
               Email
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleCopyLink}
+              className="bg-gray-500 text-white hover:bg-gray-600 border-gray-500"
+            >
+              <Copy className="h-4 w-4 mr-1" />
+              Copy Link
             </Button>
             
             <Button
