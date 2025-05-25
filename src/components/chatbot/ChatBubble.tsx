@@ -2,6 +2,7 @@
 import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import { useUser } from '@/contexts/UserContext';
 
 interface ChatBubbleProps {
   message: {
@@ -14,15 +15,9 @@ interface ChatBubbleProps {
   };
 }
 
-// Sample user data mapping - in a real app, this would come from a database
-const USER_DATA: Record<string, { name: string, avatar: string }> = {
-  'user-1': { name: 'Eya Zidi', avatar: '/lovable-uploads/0c847fa3-d2fe-4d6a-ad25-637be5fd48a6.png' },
-  'user-2': { name: 'Sarah Chen', avatar: 'https://i.pravatar.cc/150?img=32' },
-  'user-3': { name: 'Mohamed Ali', avatar: 'https://i.pravatar.cc/150?img=67' },
-  'user-4': { name: 'James Wilson', avatar: 'https://i.pravatar.cc/150?img=53' }
-};
-
 const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
+  const { currentUser, getAllUsers } = useUser();
+  
   // Format the timestamp
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -31,13 +26,15 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
   // Get user data for sender if available
   const getUserData = (userId?: string) => {
     if (!userId || userId === 'current-user') {
-      return { name: 'You', avatar: '' };
+      return currentUser ? { name: currentUser.name, avatar: currentUser.avatar } : { name: 'You', avatar: '' };
     }
-    return USER_DATA[userId] || { name: 'Unknown User', avatar: '' };
+    
+    const user = getAllUsers().find(u => u.id === userId);
+    return user ? { name: user.name, avatar: user.avatar } : { name: 'Unknown User', avatar: '' };
   };
 
   const senderData = message.senderId ? getUserData(message.senderId) : null;
-  const avatarInitials = message.isBot ? 'AI' : senderData?.name.substring(0, 2).toUpperCase() || 'YOU';
+  const isCurrentUser = message.senderId === 'current-user' || message.senderId === currentUser?.id;
 
   return (
     <div className={cn(
@@ -67,15 +64,17 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
       
       {!message.isBot && (
         <Avatar className="h-8 w-8">
-          {message.senderId && message.senderId !== 'current-user' && senderData ? (
+          {senderData && senderData.avatar ? (
             <>
               <AvatarImage src={senderData.avatar} alt={senderData.name} />
               <AvatarFallback>{senderData.name.substring(0, 2).toUpperCase()}</AvatarFallback>
             </>
           ) : (
             <>
-              <AvatarImage src="/placeholder.svg" alt="You" />
-              <AvatarFallback>YOU</AvatarFallback>
+              <AvatarImage src="/placeholder.svg" alt={senderData?.name || 'User'} />
+              <AvatarFallback>
+                {senderData?.name.substring(0, 2).toUpperCase() || 'U'}
+              </AvatarFallback>
             </>
           )}
         </Avatar>
