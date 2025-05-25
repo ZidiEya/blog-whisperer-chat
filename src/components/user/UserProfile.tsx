@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -9,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useUser } from '@/contexts/UserContext';
 import { useToast } from '@/hooks/use-toast';
 import { Edit, Save, X } from 'lucide-react';
+import ProfilePhotoUpload from './ProfilePhotoUpload';
 
 const UserProfile: React.FC = () => {
   const { currentUser, updateProfile } = useUser();
@@ -53,6 +53,10 @@ const UserProfile: React.FC = () => {
     setIsEditing(false);
   };
 
+  const handlePhotoChange = (photoUrl: string) => {
+    setFormData({ ...formData, avatar: photoUrl });
+  };
+
   return (
     <Card className="max-w-2xl mx-auto">
       <CardHeader className="flex flex-row items-center justify-between">
@@ -68,25 +72,31 @@ const UserProfile: React.FC = () => {
       </CardHeader>
       
       <CardContent className="space-y-6">
-        <div className="flex items-center space-x-4">
-          <Avatar className="h-20 w-20">
-            <AvatarImage src={formData.avatar} alt={formData.name} />
-            <AvatarFallback className="text-lg">
-              {formData.name.substring(0, 2).toUpperCase()}
-            </AvatarFallback>
-          </Avatar>
-          
-          <div className="flex-1">
-            <div className="flex items-center gap-2">
-              <div className={`h-3 w-3 rounded-full ${
-                currentUser.status === 'online' ? 'bg-green-500' : 
-                currentUser.status === 'away' ? 'bg-yellow-500' : 'bg-gray-500'
-              }`} />
-              <span className="text-sm text-muted-foreground capitalize">
-                {currentUser.status}
-              </span>
+        <div className="flex flex-col items-center space-y-4">
+          {isEditing ? (
+            <ProfilePhotoUpload
+              currentAvatar={formData.avatar}
+              userName={formData.name}
+              onPhotoChange={handlePhotoChange}
+            />
+          ) : (
+            <div className="flex items-center space-x-4">
+              <ProfilePhotoUpload
+                currentAvatar={currentUser.avatar}
+                userName={currentUser.name}
+                onPhotoChange={() => {}} // Read-only when not editing
+              />
+              <div className="flex items-center gap-2">
+                <div className={`h-3 w-3 rounded-full ${
+                  currentUser.status === 'online' ? 'bg-green-500' : 
+                  currentUser.status === 'away' ? 'bg-yellow-500' : 'bg-gray-500'
+                }`} />
+                <span className="text-sm text-muted-foreground capitalize">
+                  {currentUser.status}
+                </span>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {isEditing ? (
@@ -109,16 +119,6 @@ const UserProfile: React.FC = () => {
                 onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
                 placeholder="Tell us about yourself..."
                 rows={3}
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="avatar">Avatar URL</Label>
-              <Input
-                id="avatar"
-                value={formData.avatar}
-                onChange={(e) => setFormData({ ...formData, avatar: e.target.value })}
-                placeholder="https://example.com/avatar.jpg"
               />
             </div>
             
